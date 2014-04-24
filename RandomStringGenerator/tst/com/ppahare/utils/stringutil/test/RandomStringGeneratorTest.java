@@ -17,13 +17,16 @@ public class RandomStringGeneratorTest {
 										new Locale("en_GB"),
 										new Locale("en_US"), 
 										new Locale("en_IN")}	;
-		String finalString = "";
 		RandomStringGenerator r = new RandomStringGenerator();
-		for(Locale l : new Locale[]{Locale.JAPANESE}) {			
-			r.setLocale(l);
-			r.setLength(10);
-			finalString += l.getDisplayName() +" : " + (r.getRandomString()) + "\r\n";
+		for(Locale l : locales) {			
+			r.setLocale(l)
+			 .setLength(20)
+			 .allowSpecialCharacters(true)
+			 .allowNumbers(true)
+			 .allowSpaces(true);
+			
+			new ShowString(r.getRandomString(), l.getDisplayCountry() + "_" + l.getDisplayLanguage());
 		}
-		new ShowString(finalString, "RandomStringGenerator");
+		
 	}
 }
