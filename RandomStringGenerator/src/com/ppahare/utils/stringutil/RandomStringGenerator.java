@@ -46,7 +46,7 @@ implements ILocalizedString{
 		if(allowSpaces) alphabets.add(new UnicodeSet().addAll(SPACE));
 		if(allowWhiteSpaces) alphabets.add(new UnicodeSet().addAll(WHITE_SPACE));
 		if(allowNumbers) alphabets.add(new UnicodeSet().addAll(NUMBERS));
-		if(allowNumbers) alphabets.add(new UnicodeSet().addAll(SPECIAL_CHARACTERS));
+		if(allowSpecialCharacters) alphabets.add(new UnicodeSet().addAll(SPECIAL_CHARACTERS));
 		if(allowAscii) alphabets.add(new UnicodeSet().addAll(RandomStringUtils.randomAscii(length)));
 		if(allowAlphaNumeric) alphabets.add(new UnicodeSet().addAll(RandomStringUtils.randomAlphanumeric(length)));
 		

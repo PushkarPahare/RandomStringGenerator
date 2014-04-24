@@ -2,6 +2,7 @@ package com.ppahare.utils.stringutil.test;
 
 import java.util.Locale;
 
+import com.ppahare.utils.stringutil.ConcatenatAlphabetStringMixer;
 import com.ppahare.utils.stringutil.RandomStringGenerator;
 
 public class RandomStringGeneratorTest {
@@ -19,11 +20,10 @@ public class RandomStringGeneratorTest {
 										new Locale("en_IN")}	;
 		RandomStringGenerator r = new RandomStringGenerator();
 		for(Locale l : locales) {			
-			r.setLocale(l)
-			 .setLength(1000)
-			 .allowSpecialCharacters(true)
-			 .allowNumbers(true)
-			 .allowSpaces(true);
+			r.setLocale(l).applyMixerStrategy(new ConcatenatAlphabetStringMixer())
+			.allowNumbers(true)
+			.allowAscii(true)
+			 .setLength(10);
 			//System.out.println(r.getRandomString() + " " +  l.getDisplayCountry() + "_" + l.getDisplayLanguage());
 			new ShowString(r.getRandomString(), l.getDisplayCountry() + "_" + l.getDisplayLanguage());
 		}
