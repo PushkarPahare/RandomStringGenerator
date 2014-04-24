@@ -18,8 +18,11 @@ public class RandomStringGeneratorTest {
 										new Locale("en_US"), 
 										new Locale("en_IN")}	;
 		String finalString = "";
-		for(Locale l : locales) {
-			finalString += l.getDisplayName() +" : " + (RandomStringGenerator.getRandomString(l, 10)) + "\r\n";
+		RandomStringGenerator r = new RandomStringGenerator();
+		for(Locale l : new Locale[]{Locale.JAPANESE}) {			
+			r.setLocale(l);
+			r.setLength(10);
+			finalString += l.getDisplayName() +" : " + (r.getRandomString()) + "\r\n";
 		}
 		new ShowString(finalString, "RandomStringGenerator");
 	}
