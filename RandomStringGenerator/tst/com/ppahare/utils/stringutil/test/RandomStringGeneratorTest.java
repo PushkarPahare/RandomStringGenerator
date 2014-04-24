@@ -20,12 +20,12 @@ public class RandomStringGeneratorTest {
 		RandomStringGenerator r = new RandomStringGenerator();
 		for(Locale l : locales) {			
 			r.setLocale(l)
-			 .setLength(20)
+			 .setLength(1000)
 			 .allowSpecialCharacters(true)
 			 .allowNumbers(true)
 			 .allowSpaces(true);
-			
-			new ShowString(r.getRandomString(), l.getDisplayCountry() + "_" + l.getDisplayLanguage());
+			System.out.println(r.getRandomString() + " " +  l.getDisplayCountry() + "_" + l.getDisplayLanguage());
+			//new ShowString(r.getRandomString(), l.getDisplayCountry() + "_" + l.getDisplayLanguage());
 		}
 		
 	}
