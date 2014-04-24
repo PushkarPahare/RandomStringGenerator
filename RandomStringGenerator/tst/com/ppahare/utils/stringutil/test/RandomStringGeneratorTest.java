@@ -24,8 +24,8 @@ public class RandomStringGeneratorTest {
 			 .allowSpecialCharacters(true)
 			 .allowNumbers(true)
 			 .allowSpaces(true);
-			System.out.println(r.getRandomString() + " " +  l.getDisplayCountry() + "_" + l.getDisplayLanguage());
-			//new ShowString(r.getRandomString(), l.getDisplayCountry() + "_" + l.getDisplayLanguage());
+			//System.out.println(r.getRandomString() + " " +  l.getDisplayCountry() + "_" + l.getDisplayLanguage());
+			new ShowString(r.getRandomString(), l.getDisplayCountry() + "_" + l.getDisplayLanguage());
 		}
 		
 	}
