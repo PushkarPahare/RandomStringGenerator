@@ -1,0 +1,57 @@
+package com.ppahare.utils.stringutil;
+
+import java.util.Locale;
+import java.util.Random;
+
+import com.ibm.icu.text.UnicodeSet;
+import com.ibm.icu.util.LocaleData;
+import com.ibm.icu.util.ULocale;
+
+
+public class RandomStringGenerator {
+	public String getRandomString(Locale locale, int len) {
+		ULocale ulocale = ULocale.forLocale(locale);
+		UnicodeSet alphabet = LocaleData.getExemplarSet(ulocale, 1);
+		int alphabetSize = alphabet.size();
+		Random rand = new Random();
+		String randomString = "";
+		for(int i=0; i<len; i++) {
+			int charAt = rand.nextInt(alphabetSize);
+			int r =alphabet.charAt(charAt);
+			randomString += new String(Character.toChars(r));
+		}
+		return randomString;
+	}
+	
+	public String getAlphabet(Locale locale) {
+		ULocale ulocale = ULocale.forLocale(locale);
+		UnicodeSet alphabet = LocaleData.getExemplarSet(ulocale, 1);
+		String str = "";
+		for(int i=0; i<alphabet.size(); i++) {
+			int r =alphabet.charAt(i);		
+			str += new String(Character.toChars(r));
+		}
+		return str;
+	}
+	
+	public static void main(String s[]) {
+		RandomStringGenerator randStrGenerator =
+				new RandomStringGenerator();
+		
+		Locale[] locales = new Locale[]{new Locale("zh_CN"), 
+										new Locale("es_ES"), 
+										new Locale("fr_FR"), 
+										new Locale("de_DE"),  
+										new Locale("it_IT"), 
+										new Locale("en_CA"), 
+										new Locale("ja_JP"),
+										new Locale("en_GB"),
+										new Locale("en_US"), 
+										new Locale("en_IN")}	;
+		String finalString = "";
+		for(Locale l : locales) {
+			finalString += l.getDisplayName() +" : " + (randStrGenerator.getRandomString(l, 10)) + "\r\n";
+		}
+		new ShowString(finalString, "RandomStringGenerator");
+	}
+}
