@@ -6,22 +6,39 @@ import com.ibm.icu.text.UnicodeSet;
 import com.ibm.icu.util.LocaleData;
 import com.ibm.icu.util.ULocale;
 
-
-public class RandomStringGenerator extends AbstractRandomStringBuilder 
-implements ILocalizedString{
+/**
+ * <p> Creates localized random string of fixed length. </p>
+ * 
+ * <p> Typical call would look like :
+ * 
+ * 			RandomStringGenerator r = null;
+ * 			r = new RandomStringGenerator(Locale.ENGLISH, 10);
+ * 			r.getRandomString();
+ * 
+ * 									or
+ * 
+ * 			RandomStringGenerator r = new RandomStringGenerator();
+ * 			r.applyLocale(new Locale("ja_JP"))
+ * 			 .applyLength(10)
+ * 			 .applyMixerStrategy(new ConcatenateAlphabetStringMixer().allowAscii())
+ * 			 .getRandomString();
+ * 
+ * 									or
+ * 
+ * 			RandomStringGenerator r = new RandomStringGenerator();
+ * 			r.applyLocale(new Locale("ja_JP")).applyLength(10).getRandomString();
+ * </p>
+ * 
+ * @author ppahare
+ *
+ */
+public class RandomStringGenerator extends AbstractRandomStringBuilder {
 		
-	@Override
-	public String getAlphabet(Locale locale) {
-		ULocale ulocale = ULocale.forLocale(locale);
-		UnicodeSet alphabet = LocaleData.getExemplarSet(ulocale, 1);
-		StringBuilder randomString = new StringBuilder();
-		
-		for(int iterator=0; iterator < alphabet.size(); iterator++) {
-			int charValue = alphabet.charAt(iterator);
-			randomString.append(Character.toChars(charValue));
-		}
-		
-		return randomString.toString();
+	public RandomStringGenerator(Locale locale, int length) {
+		super(locale,length);
+	}
+	
+	public RandomStringGenerator() {
 	}
 	
 	private UnicodeSet getUnicode(Locale locale) {
@@ -31,7 +48,9 @@ implements ILocalizedString{
 	
 	@Override
 	public String getRandomString() {
-		if (length <= 0) { throw new IllegalArgumentException("You might want to specify length gt 0."); }
+		if(length == 0) return "";
+		
+		if (length < 0) { throw new IllegalArgumentException("You might want to specify length gt 0."); }
 		
 		UnicodeSet alphabet = null;
 		

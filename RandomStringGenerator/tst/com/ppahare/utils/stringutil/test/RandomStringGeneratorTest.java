@@ -1,6 +1,9 @@
 package com.ppahare.utils.stringutil.test;
 
 import java.util.Locale;
+import java.util.Random;
+
+import nl.flotsam.xeger.Xeger;
 
 import com.ppahare.utils.stringutil.ConcatenatAlphabetStringMixer;
 import com.ppahare.utils.stringutil.DefaultAlphabetStringMixer;
@@ -19,11 +22,15 @@ public class RandomStringGeneratorTest {
 										new Locale("en_GB"),
 										new Locale("en_US"), 
 										new Locale("en_IN")*/}	;
-		RandomStringGenerator r = new RandomStringGenerator();
-		for(Locale l : locales) {			
-			r.setLocale(l).applyMixerStrategy(new ConcatenatAlphabetStringMixer().allowAscii().allowNumbers())
-			 .setLength(10);
+		RandomStringGenerator r = null;
+		for(Locale l : locales) {	
+			
+			r = new RandomStringGenerator();
+			r.applyLocale(l)
+			//.applyMixerStrategy(new ConcatenatAlphabetStringMixer().allowAscii().allowNumbers())
+			 .applyLength(10);
 			//System.out.println(r.getRandomString() + " " +  l.getDisplayCountry() + "_" + l.getDisplayLanguage());
+		
 			new ShowString(r.getRandomString(), l.getDisplayCountry() + "_" + l.getDisplayLanguage());
 		}
 		
