@@ -1,31 +1,32 @@
 package com.filter.pattern;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SimpleWeightedTreatmentFilter implements IFilter {
 
-	Treatment t;
+	List<SimpleWeightedTreatmentRequest> requests;
 
-	SimpleWeightedTreatmentFilter(Treatment t2, int i) {
-		this.i = i;
-		this.t = t2;
+	public SimpleWeightedTreatmentFilter(
+			SimpleWeightedTreatmentRequest simpleWeightedTreatmentRequest) {
+		requests = Arrays.asList(simpleWeightedTreatmentRequest);
 	}
-	
-	private int i;
-	
+
 	@Override
 	public WeblabResult filter(WeblabResult weblabs) {
 		List<TreatmentAllocation> outWeblabs = new ArrayList<TreatmentAllocation>();
 		List<TreatmentAllocation> inWeblabs = weblabs.getList();
-		
-		for(TreatmentAllocation t : inWeblabs) {
-			if(t.weight ==i && t.name == t.name) {
-				outWeblabs.add(t);
+
+		for (TreatmentAllocation t : inWeblabs) {
+			for (SimpleWeightedTreatmentRequest request : requests) {
+				if (t.weight == request.weight && request.t.name == t.name) {
+					outWeblabs.add(t);
+				}
+				break;
 			}
 		}
-		
-		
+
 		return new WeblabResult(outWeblabs);
 	}
 

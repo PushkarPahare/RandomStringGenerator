@@ -1,34 +1,34 @@
 package com.filter.pattern;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.testng.Assert;
 
 public class RangeWeightedFilter implements IFilter {
-	public int x;
-	public int y;
 
-	
-	RangeWeightedFilter(int x, int y) {
-		
-		Assert.assertTrue(x <= y);	
-		this.x = x;
-		this.y = y;
+	List<RangeWeightedRequest> requests;
+
+	public RangeWeightedFilter(RangeWeightedRequest rangeWeightedRequest) {
+		// TODO Auto-generated constructor stub
+		requests = Arrays.asList(rangeWeightedRequest);
 	}
-	
+
 	@Override
 	public WeblabResult filter(WeblabResult weblabs) {
 		List<TreatmentAllocation> outWeblabs = new ArrayList<TreatmentAllocation>();
 		List<TreatmentAllocation> inWeblabs = weblabs.getList();
-		
-		for(TreatmentAllocation t : inWeblabs) {
-			if(t.weight >= x && t.weight <= y) {
-				outWeblabs.add(t);
+
+		for (TreatmentAllocation t : inWeblabs) {
+			for (RangeWeightedRequest request : requests) {
+				if (t.weight >= request.x && t.weight <= request.y) {
+					outWeblabs.add(t);
+				}
+				break;
 			}
 		}
-		
-		
+
 		return new WeblabResult(outWeblabs);
 	}
 }

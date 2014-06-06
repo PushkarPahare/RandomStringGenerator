@@ -18,10 +18,10 @@ public class Main {
 		
 
 		IFilter filter3 = new SimpleWeightedFilter(new SimpleWeightedRequest(12), new SimpleWeightedRequest(34));
-		IFilter filter4 = new RangeWeightedFilter(12,65);
-		IFilter filter0 = new SimpleWeightedTreatmentFilter(Treatment.getTreatmentMode(1),12);
-		IFilter filter1 = new TreatmentFilter(Treatment.getTreatmentMode(1));
-		IFilter filter2 = new RangeWeightedTreatmentFilter(Treatment.getTreatmentMode(1), 0, 100);
+		IFilter filter4 = new RangeWeightedFilter(new RangeWeightedRequest(12,65));
+		IFilter filter0 = new SimpleWeightedTreatmentFilter(new SimpleWeightedTreatmentRequest(Treatment.getTreatmentMode(1),12));
+		IFilter filter1 = new TreatmentFilter(new TreatmentRequest(Treatment.getTreatmentMode(1)));
+		IFilter filter2 = new RangeWeightedTreatmentFilter(new RangeWeightedTreatmentRequest(Treatment.getTreatmentMode(1), 0, 100));
 		
 
 		System.out.println("======= weight:12, T1=========");
