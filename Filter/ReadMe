@@ -1,0 +1,7 @@
+It won’t support Queries like, 
+
+“Get all weblabs which has either T1 or allocation is between 25-56)",
+
+Such queries are highly unlikely and moreover can be achieved using union of weblabs returned by two filters F1(T1) and F2(25-56).
+
+In case you want to support Or queries too, you can create OrFilters(AbstractRequest... Requests) and based on type of Request call appropriate filter method. Hope this solves your problem.
