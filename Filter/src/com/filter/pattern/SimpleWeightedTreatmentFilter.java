@@ -9,7 +9,7 @@ public class SimpleWeightedTreatmentFilter implements IFilter {
 	List<SimpleWeightedTreatmentRequest> requests;
 
 	public SimpleWeightedTreatmentFilter(
-			SimpleWeightedTreatmentRequest simpleWeightedTreatmentRequest) {
+			SimpleWeightedTreatmentRequest... simpleWeightedTreatmentRequest) {
 		requests = Arrays.asList(simpleWeightedTreatmentRequest);
 	}
 

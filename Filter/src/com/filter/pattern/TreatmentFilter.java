@@ -8,7 +8,7 @@ public class TreatmentFilter implements IFilter {
 
 	List<TreatmentRequest> requests;
 
-	public TreatmentFilter(TreatmentRequest treatmentRequest) {
+	public TreatmentFilter(TreatmentRequest... treatmentRequest) {
 		requests = Arrays.asList(treatmentRequest);
 	}
 

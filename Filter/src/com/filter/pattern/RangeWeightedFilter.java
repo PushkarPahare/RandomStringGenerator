@@ -10,7 +10,7 @@ public class RangeWeightedFilter implements IFilter {
 
 	List<RangeWeightedRequest> requests;
 
-	public RangeWeightedFilter(RangeWeightedRequest rangeWeightedRequest) {
+	public RangeWeightedFilter(RangeWeightedRequest... rangeWeightedRequest) {
 		// TODO Auto-generated constructor stub
 		requests = Arrays.asList(rangeWeightedRequest);
 	}

@@ -11,7 +11,7 @@ public class RangeWeightedTreatmentFilter implements IFilter {
 	List<RangeWeightedTreatmentRequest> requests;
 
 	public RangeWeightedTreatmentFilter(
-			RangeWeightedTreatmentRequest rangeWeightedTreatmentRequest) {
+			RangeWeightedTreatmentRequest... rangeWeightedTreatmentRequest) {
 		requests = Arrays.asList(rangeWeightedTreatmentRequest);
 	}
 
