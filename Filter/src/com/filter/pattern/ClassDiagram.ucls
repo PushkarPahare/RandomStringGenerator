@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="com.filter.pattern.Treatment" project="Filter" 
     file="/Filter/src/com/filter/pattern/Treatment.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="152" width="208" x="1185" y="520"/>    
+    <position height="152" width="208" x="484" y="331"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.filter.pattern.SimpleWeightedFilter" project="Filter" 
     file="/Filter/src/com/filter/pattern/SimpleWeightedFilter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="98" width="293" x="1060" y="208"/>    
+    <position height="98" width="293" x="1513" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="com.filter.pattern.TreatmentFilter" project="Filter" 
     file="/Filter/src/com/filter/pattern/TreatmentFilter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="98" width="223" x="1393" y="208"/>    
+    <position height="98" width="217" x="484" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="com.filter.pattern.RangeWeightedRequest" project="Filter" 
     file="/Filter/src/com/filter/pattern/RangeWeightedRequest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="116" width="198" x="2097" y="364"/>    
+    <position height="116" width="198" x="1182" y="175"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="com.filter.pattern.RangeWeightedTreatmentRequest" project="Filter" 
     file="/Filter/src/com/filter/pattern/RangeWeightedTreatmentRequest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="116" width="311" x="1669" y="364"/>    
+    <position height="116" width="311" x="714" y="175"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <enumeration id="6" language="java" name="com.filter.pattern.TreatmentMode" project="Filter" 
     file="/Filter/src/com/filter/pattern/Treatment.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="116" width="191" x="1185" y="712"/>    
+    <position height="116" width="191" x="484" y="523"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </enumeration>  
   <class id="7" language="java" name="com.filter.pattern.TreatmentRequest" project="Filter" 
     file="/Filter/src/com/filter/pattern/TreatmentRequest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1477" y="412"/>    
+    <position height="80" width="190" x="484" y="175"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="com.filter.pattern.RangeWeightedFilter" project="Filter" 
     file="/Filter/src/com/filter/pattern/RangeWeightedFilter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="98" width="291" x="2097" y="208"/>    
+    <position height="98" width="291" x="1182" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="com.filter.pattern.SimpleWeightedRequest" project="Filter" 
     file="/Filter/src/com/filter/pattern/SimpleWeightedRequest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1200" y="420"/>    
+    <position height="98" width="192" x="1513" y="175"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="com.filter.pattern.SimpleWeightedTreatmentRequest" project="Filter" 
     file="/Filter/src/com/filter/pattern/SimpleWeightedTreatmentRequest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="98" width="296" x="617" y="364"/>    
+    <position height="98" width="296" x="148" y="175"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="com.filter.pattern.RangeWeightedTreatmentFilter" project="Filter" 
     file="/Filter/src/com/filter/pattern/RangeWeightedTreatmentFilter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="98" width="401" x="1656" y="208"/>    
+    <position height="98" width="401" x="741" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,81 +102,110 @@
   </class>  
   <class id="12" language="java" name="com.filter.pattern.SimpleWeightedTreatmentFilter" project="Filter" 
     file="/Filter/src/com/filter/pattern/SimpleWeightedTreatmentFilter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="98" width="403" x="617" y="208"/>    
+    <position height="98" width="403" x="41" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="13">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="14" name="requests"/>      
-      <multiplicity id="15" minimum="0" maximum="2147483647"/>    
+  <class id="13" language="java" name="com.filter.pattern.AbstractFilter" project="Filter" 
+    file="/Filter/src/com/filter/pattern/AbstractFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="736" y="-134"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="14">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="15" name="requests"/>      
+      <multiplicity id="16" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="16">    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="17" name="requests"/>      
-      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
+  <association id="17">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="18" name="t"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="19">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="20" name="type"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
+  <generalization id="20">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="21">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
   <association id="22">    
-    <end type="SOURCE" refId="5" navigable="false">      
+    <end type="SOURCE" refId="7" navigable="false">      
       <attribute id="23" name="t"/>      
       <multiplicity id="24" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="25">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="26" name="requests"/>      
-      <multiplicity id="27" minimum="0" maximum="2147483647"/>    
+  <generalization id="25">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <association id="26">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="27" name="requests"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="28">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="29" name="t"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
+  <association id="29">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="30" name="type"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="33" name="requests"/>      
+      <multiplicity id="34" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="35">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="36" name="t"/>      
+      <multiplicity id="37" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="31">    
+  <generalization id="38">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <generalization id="39">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <association id="40">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="32" name="requests"/>      
-      <multiplicity id="33" minimum="0" maximum="2147483647"/>    
+      <attribute id="41" name="requests"/>      
+      <multiplicity id="42" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="34">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="35" name="t"/>      
-      <multiplicity id="36" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="37">    
+  <association id="43">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="38" name="requests"/>      
-      <multiplicity id="39" minimum="0" maximum="2147483647"/>    
+      <attribute id="44" name="requests"/>      
+      <multiplicity id="45" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
