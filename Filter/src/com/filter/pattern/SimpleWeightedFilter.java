@@ -4,15 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SimpleWeightedFilter implements IFilter{
+public class SimpleWeightedFilter extends AbstractFilter {
 
 	private List<SimpleWeightedRequest> requests;
-	private IFilter filter;
-
-	SimpleWeightedFilter(IFilter filter, SimpleWeightedRequest... simpleWeightedRequest) {
-		this.requests =  Arrays.asList(simpleWeightedRequest);
-		this.filter = filter;
-	}
 	
 	public SimpleWeightedFilter(SimpleWeightedRequest... simpleWeightedRequest) {
 		this.requests =  Arrays.asList(simpleWeightedRequest);
@@ -32,11 +26,6 @@ public class SimpleWeightedFilter implements IFilter{
 			}
 		}
 		
-		
-		if(filter != null)
-			return filter.filter(new WeblabResult(outWeblabs));
-		else
-			return new WeblabResult(outWeblabs);
+		return new WeblabResult(outWeblabs);
 	}
-
 }

@@ -4,15 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TreatmentFilter implements IFilter {
+public class TreatmentFilter extends AbstractFilter {
 
 	List<TreatmentRequest> requests;
-	IFilter filter;
-
-	public TreatmentFilter(IFilter filter, TreatmentRequest... treatmentRequest) {
-		requests = Arrays.asList(treatmentRequest);
-		this.filter = filter;
-	}
 
 	public TreatmentFilter(TreatmentRequest treatmentRequest) {
 		requests = Arrays.asList(treatmentRequest);
@@ -32,11 +26,6 @@ public class TreatmentFilter implements IFilter {
 				}
 			}
 		}
-
-		if(filter != null)
-			return filter.filter(new WeblabResult(outWeblabs));
-		else
-			return new WeblabResult(outWeblabs);
+		return new WeblabResult(outWeblabs);
 	}
-
 }

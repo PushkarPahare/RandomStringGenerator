@@ -6,17 +6,10 @@ import java.util.List;
 
 import org.testng.Assert;
 
-public class RangeWeightedTreatmentFilter implements IFilter {
+public class RangeWeightedTreatmentFilter extends AbstractFilter {
 
 	List<RangeWeightedTreatmentRequest> requests;
-	IFilter filter;
 	
-	public RangeWeightedTreatmentFilter(IFilter filter,
-			RangeWeightedTreatmentRequest... rangeWeightedTreatmentRequest) {
-		requests = Arrays.asList(rangeWeightedTreatmentRequest);
-		this.filter = filter;
-	}
-
 	public RangeWeightedTreatmentFilter(
 			RangeWeightedTreatmentRequest... rangeWeightedTreatmentRequest) {
 		requests = Arrays.asList(rangeWeightedTreatmentRequest);
@@ -37,10 +30,6 @@ public class RangeWeightedTreatmentFilter implements IFilter {
 				}
 			}
 		}
+		return new WeblabResult(outWeblabs);	}
 
-		if(filter != null)
-			return filter.filter(new WeblabResult(outWeblabs));
-		else
-			return new WeblabResult(outWeblabs);
-	}
 }

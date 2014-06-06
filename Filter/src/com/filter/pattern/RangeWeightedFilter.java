@@ -6,16 +6,9 @@ import java.util.List;
 
 import org.testng.Assert;
 
-public class RangeWeightedFilter implements IFilter {
+public class RangeWeightedFilter extends AbstractFilter {
 
 	List<RangeWeightedRequest> requests;
-	IFilter filter;
-	
-	public RangeWeightedFilter(IFilter filter, RangeWeightedRequest... rangeWeightedRequest) {
-		// TODO Auto-generated constructor stub
-		requests = Arrays.asList(rangeWeightedRequest);
-		this.filter = filter;
-	}
 	
 	public RangeWeightedFilter(RangeWeightedRequest... rangeWeightedRequest) {
 		// TODO Auto-generated constructor stub
@@ -36,10 +29,7 @@ public class RangeWeightedFilter implements IFilter {
 				}
 			}
 		}
-
-		if(filter != null)
-			return filter.filter(new WeblabResult(outWeblabs));
-		else
-			return new WeblabResult(outWeblabs);
+		return new WeblabResult(outWeblabs);
+		
 	}
 }

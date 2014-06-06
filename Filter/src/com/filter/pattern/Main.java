@@ -17,11 +17,12 @@ public class Main {
 		WeblabResult weblabResult = new WeblabResult(list);
 		
 
-		IFilter filter3 = new SimpleWeightedFilter(new SimpleWeightedRequest(12), new SimpleWeightedRequest(34));
-		IFilter filter4 = new RangeWeightedFilter(new RangeWeightedRequest(12,65));
-		IFilter filter0 = new SimpleWeightedTreatmentFilter(new SimpleWeightedTreatmentRequest(Treatment.getTreatmentMode(1),12));
-		IFilter filter1 = new TreatmentFilter(new TreatmentRequest(Treatment.getTreatmentMode(1)));
-		IFilter filter2 =  new RangeWeightedTreatmentFilter(new RangeWeightedTreatmentRequest(Treatment.getTreatmentMode(1), 12, 65),
+		AbstractFilter filter3 = new SimpleWeightedFilter(new SimpleWeightedRequest(12), new SimpleWeightedRequest(34));
+		
+		AbstractFilter filter4 = new RangeWeightedFilter(new RangeWeightedRequest(12,65));
+		AbstractFilter filter0 = new SimpleWeightedTreatmentFilter(new SimpleWeightedTreatmentRequest(Treatment.getTreatmentMode(1),12));
+		AbstractFilter filter1 = new TreatmentFilter(new TreatmentRequest(Treatment.getTreatmentMode(1)));
+		AbstractFilter filter2 =  new RangeWeightedTreatmentFilter(new RangeWeightedTreatmentRequest(Treatment.getTreatmentMode(1), 12, 65),
 				   											new RangeWeightedTreatmentRequest(Treatment.getTreatmentMode(2), 0, 50));
 
 		System.out.println("======= weight:12, T1=========");
@@ -57,10 +58,10 @@ public class Main {
 
 		System.out.println("======= weight:T1 or 0-50  =========");
 		
-		IFilter filter01 = new TreatmentFilter(new TreatmentRequest(Treatment.getTreatmentMode(1)));
-		IFilter filter02 = new RangeWeightedFilter(filter01, new RangeWeightedRequest(0, 50));
+		AbstractFilter filter01 = new TreatmentFilter(new TreatmentRequest(Treatment.getTreatmentMode(1)));
+		AbstractFilter filter02 = new RangeWeightedFilter(new RangeWeightedRequest(0, 50));
 		
-		filteredResult = filter02.filter(weblabResult);
+		filteredResult = filter02.filter(weblabResult, filter01);
 		System.out.print(filteredResult);
 	}
 }
