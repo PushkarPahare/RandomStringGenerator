@@ -21,8 +21,8 @@ public class Main {
 		IFilter filter4 = new RangeWeightedFilter(new RangeWeightedRequest(12,65));
 		IFilter filter0 = new SimpleWeightedTreatmentFilter(new SimpleWeightedTreatmentRequest(Treatment.getTreatmentMode(1),12));
 		IFilter filter1 = new TreatmentFilter(new TreatmentRequest(Treatment.getTreatmentMode(1)));
-		IFilter filter2 = new RangeWeightedTreatmentFilter(new RangeWeightedTreatmentRequest(Treatment.getTreatmentMode(1), 0, 100));
-		
+		IFilter filter2 =  new RangeWeightedTreatmentFilter(new RangeWeightedTreatmentRequest(Treatment.getTreatmentMode(1), 12, 65),
+				   											new RangeWeightedTreatmentRequest(Treatment.getTreatmentMode(2), 0, 50));
 
 		System.out.println("======= weight:12, T1=========");
 		
@@ -54,5 +54,13 @@ public class Main {
 		System.out.print(filteredResult)
 		;
 		
+
+		System.out.println("======= weight:T1 or 0-50  =========");
+		
+		IFilter filter01 = new TreatmentFilter(new TreatmentRequest(Treatment.getTreatmentMode(1)));
+		IFilter filter02 = new RangeWeightedFilter(filter01, new RangeWeightedRequest(0, 50));
+		
+		filteredResult = filter02.filter(weblabResult);
+		System.out.print(filteredResult);
 	}
 }

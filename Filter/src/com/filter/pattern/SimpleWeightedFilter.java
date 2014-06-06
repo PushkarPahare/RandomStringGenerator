@@ -7,11 +7,17 @@ import java.util.List;
 public class SimpleWeightedFilter implements IFilter{
 
 	private List<SimpleWeightedRequest> requests;
+	private IFilter filter;
 
-	SimpleWeightedFilter(SimpleWeightedRequest... simpleWeightedRequest) {
+	SimpleWeightedFilter(IFilter filter, SimpleWeightedRequest... simpleWeightedRequest) {
 		this.requests =  Arrays.asList(simpleWeightedRequest);
+		this.filter = filter;
 	}
 	
+	public SimpleWeightedFilter(SimpleWeightedRequest... simpleWeightedRequest) {
+		this.requests =  Arrays.asList(simpleWeightedRequest);
+	}
+
 	@Override
 	public WeblabResult filter(WeblabResult weblabs) {
 		List<TreatmentAllocation> outWeblabs = new ArrayList<TreatmentAllocation>();
@@ -27,7 +33,10 @@ public class SimpleWeightedFilter implements IFilter{
 		}
 		
 		
-		return new WeblabResult(outWeblabs);
+		if(filter != null)
+			return filter.filter(new WeblabResult(outWeblabs));
+		else
+			return new WeblabResult(outWeblabs);
 	}
 
 }

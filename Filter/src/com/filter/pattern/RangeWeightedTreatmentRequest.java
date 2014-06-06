@@ -2,7 +2,7 @@ package com.filter.pattern;
 
 import org.testng.Assert;
 
-public class RangeWeightedTreatmentRequest {
+public class RangeWeightedTreatmentRequest extends AbstractRequest {
 	Treatment t;
 	public int x;
 	public int y;

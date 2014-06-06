@@ -9,6 +9,13 @@ import org.testng.Assert;
 public class RangeWeightedTreatmentFilter implements IFilter {
 
 	List<RangeWeightedTreatmentRequest> requests;
+	IFilter filter;
+	
+	public RangeWeightedTreatmentFilter(IFilter filter,
+			RangeWeightedTreatmentRequest... rangeWeightedTreatmentRequest) {
+		requests = Arrays.asList(rangeWeightedTreatmentRequest);
+		this.filter = filter;
+	}
 
 	public RangeWeightedTreatmentFilter(
 			RangeWeightedTreatmentRequest... rangeWeightedTreatmentRequest) {
@@ -25,11 +32,15 @@ public class RangeWeightedTreatmentFilter implements IFilter {
 				if (t.weight >= request.x && t.weight <= request.y
 						&& request.t.name == t.name) {
 					outWeblabs.add(t);
+
+					break;
 				}
-				break;
 			}
 		}
 
-		return new WeblabResult(outWeblabs);
+		if(filter != null)
+			return filter.filter(new WeblabResult(outWeblabs));
+		else
+			return new WeblabResult(outWeblabs);
 	}
 }

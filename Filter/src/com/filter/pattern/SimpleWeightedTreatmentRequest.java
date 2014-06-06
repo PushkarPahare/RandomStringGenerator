@@ -1,6 +1,6 @@
 package com.filter.pattern;
 
-public class SimpleWeightedTreatmentRequest {
+public class SimpleWeightedTreatmentRequest extends AbstractRequest {
 	Treatment t;
 
 	SimpleWeightedTreatmentRequest(Treatment t2, int i) {

@@ -7,8 +7,14 @@ import java.util.List;
 public class TreatmentFilter implements IFilter {
 
 	List<TreatmentRequest> requests;
+	IFilter filter;
 
-	public TreatmentFilter(TreatmentRequest... treatmentRequest) {
+	public TreatmentFilter(IFilter filter, TreatmentRequest... treatmentRequest) {
+		requests = Arrays.asList(treatmentRequest);
+		this.filter = filter;
+	}
+
+	public TreatmentFilter(TreatmentRequest treatmentRequest) {
 		requests = Arrays.asList(treatmentRequest);
 	}
 
@@ -21,12 +27,16 @@ public class TreatmentFilter implements IFilter {
 			for (TreatmentRequest request : requests) {
 				if (request.t.name == t.name) {
 					outWeblabs.add(t);
+					break;
+
 				}
-				break;
 			}
 		}
 
-		return new WeblabResult(outWeblabs);
+		if(filter != null)
+			return filter.filter(new WeblabResult(outWeblabs));
+		else
+			return new WeblabResult(outWeblabs);
 	}
 
 }

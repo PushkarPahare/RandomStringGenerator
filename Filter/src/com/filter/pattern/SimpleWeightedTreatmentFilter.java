@@ -7,6 +7,13 @@ import java.util.List;
 public class SimpleWeightedTreatmentFilter implements IFilter {
 
 	List<SimpleWeightedTreatmentRequest> requests;
+	private IFilter filter;
+
+	public SimpleWeightedTreatmentFilter(IFilter filter,
+			SimpleWeightedTreatmentRequest... simpleWeightedTreatmentRequest) {
+		requests = Arrays.asList(simpleWeightedTreatmentRequest);
+		this.filter = filter;
+	}
 
 	public SimpleWeightedTreatmentFilter(
 			SimpleWeightedTreatmentRequest... simpleWeightedTreatmentRequest) {
@@ -22,12 +29,16 @@ public class SimpleWeightedTreatmentFilter implements IFilter {
 			for (SimpleWeightedTreatmentRequest request : requests) {
 				if (t.weight == request.weight && request.t.name == t.name) {
 					outWeblabs.add(t);
+					break;
 				}
-				break;
+				
 			}
 		}
 
-		return new WeblabResult(outWeblabs);
+		if(filter != null)
+			return filter.filter(new WeblabResult(outWeblabs));
+		else
+			return new WeblabResult(outWeblabs);
 	}
 
 }
