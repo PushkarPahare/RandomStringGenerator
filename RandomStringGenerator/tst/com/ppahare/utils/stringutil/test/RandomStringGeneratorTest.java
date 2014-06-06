@@ -12,7 +12,7 @@ import com.ppahare.utils.stringutil.RandomStringGenerator;
 public class RandomStringGeneratorTest {
 	public static void main(String s[]) {
 		
-		Locale[] locales = new Locale[]{new Locale("zh_CN")
+		Locale[] locales = new Locale[]{new Locale("fr_FR")
 										/*new Locale("es_ES"), 
 										new Locale("fr_FR"), 
 										new Locale("de_DE"),  
@@ -27,9 +27,9 @@ public class RandomStringGeneratorTest {
 			
 			r = new RandomStringGenerator();
 			r.applyLocale(l)
-			//.applyMixerStrategy(new ConcatenatAlphabetStringMixer().allowAscii().allowNumbers())
-			 .applyLength(10);
-			//System.out.println(r.getRandomString() + " " +  l.getDisplayCountry() + "_" + l.getDisplayLanguage());
+			 .applyMixerStrategy(new ConcatenatAlphabetStringMixer().allowSpaces().allowSpecialCharacters())
+			 .applyLength(50);
+			System.out.println(r.getRandomString());
 		
 			new ShowString(r.getRandomString(), l.getDisplayCountry() + "_" + l.getDisplayLanguage());
 		}
