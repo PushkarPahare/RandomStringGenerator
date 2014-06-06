@@ -17,7 +17,7 @@ public class Main {
 		WeblabResult weblabResult = new WeblabResult(list);
 		
 
-		IFilter filter3 = new SimpleWeightedFilter(12);
+		IFilter filter3 = new SimpleWeightedFilter(new SimpleWeightedRequest(12), new SimpleWeightedRequest(34));
 		IFilter filter4 = new RangeWeightedFilter(12,65);
 		IFilter filter0 = new SimpleWeightedTreatmentFilter(Treatment.getTreatmentMode(1),12);
 		IFilter filter1 = new TreatmentFilter(Treatment.getTreatmentMode(1));
@@ -42,7 +42,7 @@ public class Main {
 		;
 		
 
-		System.out.println("======= weight:12 =========");
+		System.out.println("======= weight:12 | 34 =========");
 		
 		filteredResult = filter3.filter(weblabResult);
 		System.out.print(filteredResult)

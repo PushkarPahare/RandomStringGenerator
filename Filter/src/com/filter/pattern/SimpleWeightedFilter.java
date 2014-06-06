@@ -1,15 +1,16 @@
 package com.filter.pattern;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SimpleWeightedFilter implements IFilter{
 
-	SimpleWeightedFilter(int i) {
-		this.i = i;
+	private List<SimpleWeightedRequest> requests;
+
+	SimpleWeightedFilter(SimpleWeightedRequest... simpleWeightedRequest) {
+		this.requests =  Arrays.asList(simpleWeightedRequest);
 	}
-	
-	private int i;
 	
 	@Override
 	public WeblabResult filter(WeblabResult weblabs) {
@@ -17,8 +18,11 @@ public class SimpleWeightedFilter implements IFilter{
 		List<TreatmentAllocation> inWeblabs = weblabs.getList();
 		
 		for(TreatmentAllocation t : inWeblabs) {
-			if(t.weight == i) {
-				outWeblabs.add(t);
+			for(SimpleWeightedRequest request : requests) {
+				if(t.weight == request.weight) {
+					outWeblabs.add(t);
+					break;
+				}
 			}
 		}
 		
