@@ -1,10 +1,36 @@
 package com.filter.pattern;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 
+import org.apache.commons.collections4.set.ListOrderedSet;
+
 public class Main {
-	public static void main(String s[]) {
+	
+	public static void main(String... s) {
+		LinkedHashSet<String> l = null;
+		l = new LinkedHashSet<String>();
+		
+		l.add("AAA");
+		l.add("BBB");
+		l.add("CCC");
+		l.add("BBB");
+		
+		System.out.println(l);
+		
+		ListOrderedSet l1 = new ListOrderedSet();
+		
+
+		l1.add("AAA");
+		l1.add("BBB");
+		l1.add("CCC");
+		l1.add("BBB");
+		
+		System.out.println(l1);
+		
+	}
+	public static void main1(String s[]) {
 		List<TreatmentAllocation> list = new ArrayList<TreatmentAllocation>();
 		list.add(new TreatmentAllocation(1,12));
 		list.add(new TreatmentAllocation(1,34));
